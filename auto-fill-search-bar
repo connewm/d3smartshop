@@ -1,0 +1,28 @@
+mport SearchInput, { createFilter } from 'react-native-search-filter';
+
+//this variable needs to be declared outside of the component
+const KEYS_TO_FILTERS = ['name'];
+
+<View style={styles.container}>
+          <SearchInput
+            onChangeText={term => {this.onSearchUpdated(term) }}
+            style={styles.input}
+            placeholder="Start Shopping"
+          />
+          <ScrollView>
+            {filteredItems.map(item => {
+              return (
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemCard', { name: items.name, image: items.list_image })}
+                  style={styles.foodItem}
+                >
+                  <View>
+                    <Text>{item.name}</Text>
+                  </View>
+                </TouchableOpacity>             
+                 )
+            })}
+          </ScrollView>
+        </View>
+        
+        //Make sure to import ItemData.json
+        //const items = require('../../../../assets/ItemData.json');
