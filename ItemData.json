@@ -1,0 +1,15 @@
+//Belongs in the asset folder, feel free to add additional items
+
+[{"name": "Apples", "list_img": "./apple.jpg", "icon_img": "./Fruit_clip.jpg"},
+ {"name": "Nacho Cheese Doritos", "list_img": "./chips.jpg", "icon_img": "Chips_clip.jpg"},
+ {"name": "Coke", "list_img": "./coke.jpg", "icon_img": "./Soda_clip.jpg"},
+ {"name": "Eggs", "list_img": "./eggs.jpg", "icon_img": "Egg_clip.jpg"},
+ {"name": "Fruity Pebbles", "list_img": "./fruitypebbles.jpeg", "icon_img": "./Cereal_clip.jpg"},
+ {"name": "Beer", "list_img": "./beer.jpeg", "icon_img": "./Beer_clip.jpg"},
+ {"name": "Milk", "list_img": "./milk.jpeg", "icon_img": "./Milk_clip.png"},
+ {"name": "Vegetables", "list_img": "", "icon_img": "./Veggies_clip.jpg"},
+ {"name": "Bread", "list_img": "./bread.jpeg", "icon_img": "./Bread_clip.jpg"},   
+ {"name": "Ham", "list_img": "./ham.jpeg", "icon_img": ""},
+ {"name": "Cheese", "list_img": "./cheese.jpg", "icon_img": "", "coupons": ["1", "2"]}
+
+]
