@@ -1,9 +1,63 @@
-mport SearchInput, { createFilter } from 'react-native-search-filter';
+import React, { Component } from 'react';
+import { Container, Button, Text, Header, Item, Thumbnail,
+Icon, Input, Content, Body, Left, Right } from 'native-base';
+import { Stylesheet, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Grid, Col, Row } from 'react-native-easy-grid';
+import SearchInput, { createFilter } from 'react-native-search-filter';
+import styles from './styles';
 
-//this variable needs to be declared outside of the component
 const KEYS_TO_FILTERS = ['name'];
 
-<View style={styles.container}>
+const items = require('../../../../assets/ItemData.json');
+const beer = require('../../../../assets/Beer_clip.jpg');
+const bread = require('../../../../assets/Bread_clip.jpg');
+const chips = require('../../../../assets/Chips_clip.jpg');
+const egg = require('../../../../assets/Egg_clip.jpg');
+const fruit = require('../../../../assets/Fruit_clip.jpg');
+const milk = require('../../../../assets/Milk_clip.png');
+const soda = require('../../../../assets/Soda_clip.jpg');
+const cereal = require('../../../../assets/Cereal_clip.jpg');
+const veggies = require('../../../../assets/Veggies_clip.jpg');
+
+
+
+
+const bottom = 15;
+const side = 30;
+
+export default class FindItems extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        searchTerm: 'ggggg',
+        showGrid: true
+      }
+    }
+
+    onSearchUpdated(term) {
+      this.setState({ searchTerm: term, showGrid: false })
+    }
+
+  render() {
+    const filteredItems = items.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
+    
+    return (
+      <Container style={styles.containerStyle}>
+        <Header style={styles.headerStyle}>
+          <Left>
+            <Button
+            transparent
+            onPress={() => this.props.navigation.goBack()}
+            >
+              <Icon style={styles.iconStyle}name='arrow-back' />
+            </Button>
+          </Left>
+          <Body style={{ position: 'absolute' }}>
+            <Text style={styles.headerText}>Find Items</Text>
+          </Body>
+          <Right />
+        </Header>
+        <View style={styles.container}>
           <SearchInput
             onChangeText={term => {this.onSearchUpdated(term) }}
             style={styles.input}
@@ -23,6 +77,3 @@ const KEYS_TO_FILTERS = ['name'];
             })}
           </ScrollView>
         </View>
-        
-        //Make sure to import ItemData.json
-        //const items = require('../../../../assets/ItemData.json');
