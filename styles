@@ -16,5 +16,20 @@ export default {
   iconStyle: {
     color: 'black',
     fontSize: 30
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#FFF',
+    justifyContent: 'flex-start'
+  },
+  foodItem: {
+    borderBottomWidth: 0.5,
+    borderColor: 'rgba(0,0,0,0.3)',
+    padding: 10
+  },
+  input: {
+    padding: 10,
+    borderColor: '#CCC',
+    borderWidth: 1
   }
 };
