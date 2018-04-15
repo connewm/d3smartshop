@@ -69,12 +69,8 @@ export default class CouponCardImg extends Component {
             {{ justifyContent: 'space-evenly'}}
         >
         <ScrollView>
-            {displayImages(0)}
-        </ScrollView>          
-        <ScrollView>
+            {displayImages(0)}      
             {displayImages(1)}
-        </ScrollView>
-        <ScrollView>
             {displayImages(2)}
         </ScrollView>                
 
