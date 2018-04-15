@@ -14,6 +14,7 @@ displayImages(couponsToDisplay) {
             return(
                 couponsKrogers.map((arrItem) => 
                 <View>
+                    <Text>Kroger</Text>
                     <Image source={require(couponsKroger.image)} />
                     <Button>Add to Coupon Book</Button>
                 </View>
@@ -23,6 +24,7 @@ displayImages(couponsToDisplay) {
             return(
                 couponsWals.map((arrItem) => 
                 <View>
+                    <Text>WalMart</Text>
                     <Image source={require(couponsWal.image)} />
                     <Button>Add to Coupon Book</Button>
                 </View>
@@ -32,6 +34,7 @@ displayImages(couponsToDisplay) {
             return(
                 couponsMeijers.map((arrItem) => 
                 <View>
+                    <Text>Meijer</Text>
                     <Image source={require(couponsMeijer.image)} />
                     <Button>Add to Coupon Book</Button>
                 </View>
