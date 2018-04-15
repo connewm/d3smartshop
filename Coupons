@@ -1,0 +1,85 @@
+import React, { Component } from 'react';
+import { Container, Header, Button, Image, Content, Right, Left, Text, Body, Card, CardItem, List} from 'native-base';
+import styles from './styles';
+import couponsKrogers from './couponsKroger.json';
+import couponsWals from './couponsWal.json';
+import couponsMeijers from './couponsMeijer';
+
+const screenHeight = Dimensions.get('window').height;
+const screenWidth = Dimensions.get('window').width;
+
+displayImages(couponsToDisplay) {
+    
+        if (couponsToDisplay === 0) {
+            return(
+                couponsKrogers.map((arrItem) => 
+                <View>
+                    <Image source={require(couponsKroger.image)} />
+                    <Button>Add to Coupon Book</Button>
+                </View>
+            )
+            )
+        } else if (couponsToDisplay === 1) {
+            return(
+                couponsWals.map((arrItem) => 
+                <View>
+                    <Image source={require(couponsWal.image)} />
+                    <Button>Add to Coupon Book</Button>
+                </View>
+            )
+            )
+        } else {
+            return(
+                couponsMeijers.map((arrItem) => 
+                <View>
+                    <Image source={require(couponsMeijer.image)} />
+                    <Button>Add to Coupon Book</Button>
+                </View>
+            )
+            )
+        }
+    
+};
+
+export default class CouponCardImg extends Component {
+    render() {
+      return (
+        <Container style={styles.containerStyle}>
+          <Header hasTabs style={styles.headerStyle}>
+            <Left>
+              <Button
+              transparent
+              onPress={() => this.props.navigation.goBack()}
+              >
+                <Icon style={styles.iconStyle}name='arrow-back' />
+              </Button>
+            </Left>
+            <Body style={{ position: 'absolute' }}>
+              <Text style={styles.headerText}>
+                {this.props.navigation.state.params.item} 
+                Coupons</Text>
+            </Body>
+            <Right>
+              <Button transparent>
+                <Icon style={styles.iconStyle}name='more' />
+              </Button>
+            </Right>
+          </Header>
+        <Content padder contentContainerStyle=
+            {{ justifyContent: 'space-evenly'}}
+        >
+        <ScrollView>
+            {displayImages(0)}
+        </ScrollView>          
+        <ScrollView>
+            {displayImages(1)}
+        </ScrollView>
+        <ScrollView>
+            {displayImages(2)}
+        </ScrollView>                
+
+        </Content>
+        </Container>
+    );
+}
+    }
