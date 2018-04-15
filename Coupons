@@ -3,7 +3,7 @@ import { Container, Header, Button, Image, Content, Right, Left, Text, Body, Car
 import styles from './styles';
 import couponsKrogers from './couponsKroger.json';
 import couponsWals from './couponsWal.json';
-import couponsMeijers from './couponsMeijer';
+import couponsMeijers from './couponsMeijer.json';
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
