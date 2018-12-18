@@ -12,3 +12,4 @@ I.e. if a user defines a shopping list as:
 2.Bread 
 3.Crackers 
 
+Multiple lists will be generated from different stores, in the order from the smallest ### Total ### price
